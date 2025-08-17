@@ -20,4 +20,13 @@ public class ProductoService {
         return productoRepository.findByDisponibleTrue();
     }
 
+    public ProductoEntity actualizarDisponible(Long id, boolean disponible) {
+        ProductoEntity producto = productoRepository.findById(id).orElse(null);
+        if (producto != null) {
+            producto.setDisponible(disponible);
+            productoRepository.save(producto);
+        }
+        return producto;
+    }
+
 }
