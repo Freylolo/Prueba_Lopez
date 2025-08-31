@@ -1,7 +1,6 @@
 package ec.sasf.ms_comp_prueba_freya_lopez.web.controller;
 
 import ec.sasf.ms_comp_prueba_freya_lopez.persistence.entity.ClienteEntity;
-import ec.sasf.ms_comp_prueba_freya_lopez.persistence.repository.ClienteRepository;
 import ec.sasf.ms_comp_prueba_freya_lopez.service.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
