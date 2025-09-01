@@ -29,4 +29,20 @@ public class ProductoService {
         return producto;
     }
 
+    public void eliminarProducto(Long id) {
+        productoRepository.deleteById(id);
+    }
+
+    public List<ProductoEntity> listarTodos() {
+        return productoRepository.findAll();
+    }
+
+    public ProductoEntity editarProducto(Long id, ProductoEntity producto) {
+        ProductoEntity existente = productoRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Producto no encontrado"));
+        existente.setNombre(producto.getNombre());
+        existente.setPrecio(producto.getPrecio());
+        return productoRepository.save(existente);
+    }
+
 }

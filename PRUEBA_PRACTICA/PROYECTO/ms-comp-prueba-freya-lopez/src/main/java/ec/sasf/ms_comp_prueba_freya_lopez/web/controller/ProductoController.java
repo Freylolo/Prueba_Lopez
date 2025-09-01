@@ -22,9 +22,25 @@ public class ProductoController {
         return productoService.listaProductos();
 
     }
+    @GetMapping("/productos")
+    public List<ProductoEntity> listarTodos() {
+        return productoService.listarTodos();
+    }
+
 
     @PutMapping("/{id}/disponible")
     public ProductoEntity actualizarProducto(@PathVariable Long id, @RequestParam boolean disponible) {
         return productoService.actualizarDisponible(id, disponible);
     }
+
+    @DeleteMapping("/{id}")
+    public void eliminarProducto(@PathVariable Long id) {
+        productoService.eliminarProducto(id);
+    }
+
+    @PutMapping("/{id}")
+    public ProductoEntity editarProducto(@PathVariable Long id, @RequestBody ProductoEntity producto) {
+        return productoService.editarProducto(id, producto);
+    }
+
 }

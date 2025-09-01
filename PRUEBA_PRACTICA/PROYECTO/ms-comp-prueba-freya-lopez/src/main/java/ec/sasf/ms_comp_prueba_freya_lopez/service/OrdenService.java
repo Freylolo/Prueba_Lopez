@@ -41,4 +41,9 @@ public class OrdenService {
     public List<OrdenEntity> listaCliente(Long idCliente) {
         return ordenRepository.findByClienteId(idCliente);
     }
+
+    public List<OrdenEntity> listarTodas() {
+        return ordenRepository.findAll();
+    }
+
 }

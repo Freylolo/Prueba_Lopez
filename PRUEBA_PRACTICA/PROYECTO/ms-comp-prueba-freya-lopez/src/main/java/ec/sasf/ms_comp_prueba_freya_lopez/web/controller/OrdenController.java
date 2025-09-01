@@ -23,4 +23,9 @@ public class OrdenController {
         return ordenService.listaCliente(idCliente);
     }
 
+    @GetMapping
+    public List<OrdenEntity> listarTodas() {
+        return ordenService.listarTodas();
+    }
+
 }

@@ -5,6 +5,8 @@ import ec.sasf.ms_comp_prueba_freya_lopez.service.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/clientes")
 public class ClienteContoller {
@@ -18,5 +20,10 @@ public class ClienteContoller {
     @GetMapping("/test")
     public String testLogin() {
         return "Login correcto";
+    }
+
+    @GetMapping
+    public List<ClienteEntity> listarClientes() {
+        return clienteService.listarTodos();
     }
 }
