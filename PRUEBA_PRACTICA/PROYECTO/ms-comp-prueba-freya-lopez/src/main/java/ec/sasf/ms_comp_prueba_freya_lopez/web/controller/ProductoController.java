@@ -27,7 +27,6 @@ public class ProductoController {
         return productoService.listarTodos();
     }
 
-
     @PutMapping("/{id}/disponible")
     public ProductoEntity actualizarProducto(@PathVariable Long id, @RequestParam boolean disponible) {
         return productoService.actualizarDisponible(id, disponible);

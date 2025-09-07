@@ -26,4 +26,6 @@ public class ClienteContoller {
     public List<ClienteEntity> listarClientes() {
         return clienteService.listarTodos();
     }
+
+
 }

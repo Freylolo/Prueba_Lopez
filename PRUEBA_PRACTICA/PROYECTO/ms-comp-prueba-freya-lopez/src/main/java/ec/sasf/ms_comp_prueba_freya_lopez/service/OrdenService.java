@@ -9,6 +9,7 @@ import ec.sasf.ms_comp_prueba_freya_lopez.persistence.repository.ProductoReposit
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
@@ -45,5 +46,12 @@ public class OrdenService {
     public List<OrdenEntity> listarTodas() {
         return ordenRepository.findAll();
     }
+
+    public List<OrdenEntity> listaPorEmail(String email) {
+        ClienteEntity cliente = clienteRepository.findByCorreo(email);
+        if(cliente == null) return Collections.emptyList();
+        return ordenRepository.findByClienteId(cliente.getId());
+    }
+
 
 }

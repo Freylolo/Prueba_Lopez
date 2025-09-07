@@ -28,4 +28,9 @@ public class OrdenController {
         return ordenService.listarTodas();
     }
 
+    @GetMapping("/ordenes")
+    public List<OrdenEntity> ordenes(@RequestParam String email) {
+        return ordenService.listaPorEmail(email); // crea este método en tu service
+    }
+
 }
